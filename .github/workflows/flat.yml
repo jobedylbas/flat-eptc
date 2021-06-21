@@ -24,4 +24,4 @@ jobs:
         with:
           http_url: https://eptclive.herokuapp.com/incident-metrics/incident-metrics # The data to fetch every minute
           downloaded_filename: incident-metrics.json # The http_url gets saved and renamed in our repository as incident-metrics.json
-          postprocess: data-process.js
+          # postprocess: data-process.js
