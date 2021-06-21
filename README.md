@@ -1,5 +1,9 @@
 # flat-eptc 
 
+## Visualização
+
+Uma rápida visualização pode ser feita pelo [Flat Viewer](https://flatgithub.com/jobedylbas/flat-eptc).
+
 ## Dicionário de dados
 
 |      Campo   |   Tipo  | Descrição |
