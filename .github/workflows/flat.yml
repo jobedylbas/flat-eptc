@@ -5,7 +5,7 @@ on:
       - ./postprocess.js
   workflow_dispatch: null
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/5 * * * *"
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -21,4 +21,4 @@ jobs:
         with:
           http_url: https://eptclive.herokuapp.com/incident-metrics/incident-metrics
           downloaded_filename: incident-metrics.json
-          # postprocess: ./postprocess.js
+          postprocess: ./postprocess.js

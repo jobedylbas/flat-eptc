@@ -1,23 +1,25 @@
 // This can be a typescript file as well
 
 // Helper library written for useful postprocessing tasks with Flat Data
-// Has helper functions for manipulating csv, txt, json, excel, zip, and image files
-import { readJSON, writeCSV } from 'https://deno.land/x/flat@0.0.10/mod.ts' 
+// Has helper functions for manipulating csv, json, excel, zip, and image files
+import { readJSON, writeJSON } from 'https://deno.land/x/flat@0.0.9/mod.ts' 
 
 // Step 1: Read the downloaded_filename JSON
 const filename = Deno.args[0] // Same name as downloaded_filename `const filename = 'btc-price.json';`
 const json = await readJSON(filename)
 console.log(json)
 
-// // Step 2: Transform to CSV
-// const items = json.items
-// const replacer = (key, value) => value === null ? '' : value // specify how you want to handle null values here
-// const header = Object.keys(items[0])
-// const csv = [
-//   header.join(','), // header row first
-//   ...items.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
-// ].join('\r\n')
-// console.log(csv)
+// Step 2: Filter specific data we want to keep and write to a new JSON file
+// const currencyRates = Object.values(json.bpi); // convert property values into an array
+// const filteredCurrencyRates = currencyRates.map(rate => ({ 
+//     currency: rate.description,
+//     bitcoinRate: rate.rate
+// }));
+
+// Step 3. Write a new JSON file with our filtered data
+// const newFilename = `btc-price-postprocessed.json` // name of a new file to be saved
+// await writeJSON(newFilename, filteredCurrencyRates) // create a new JSON file with just the Bitcoin price
+// console.log("Wrote a post process file")
 
 // // Step 3. Write a new CSV file with our data
 // const newFilename = `incident-metrics.csv` // name of a new file to be saved
