@@ -2,7 +2,6 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
-      - ./postprocess.js
   workflow_dispatch: null
   schedule:
     - cron: "*/5 * * * *"
@@ -21,4 +20,3 @@ jobs:
         with:
           http_url: https://eptclive.herokuapp.com/incident-metrics/incident-metrics
           downloaded_filename: incident-metrics.json
-          postprocess: ./postprocess.js
