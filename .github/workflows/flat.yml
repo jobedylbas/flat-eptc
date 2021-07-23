@@ -4,7 +4,7 @@ on:
       - .github/workflows/flat.yml
   workflow_dispatch: null
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/25 10-23 * * 1-5"
 jobs:
   scheduled:
     runs-on: ubuntu-latest
